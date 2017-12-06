@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author peyman
+ * @author Ghasem Fattahpour
  */
 public abstract class MessageBase {
 

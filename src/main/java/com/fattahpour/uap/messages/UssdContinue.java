@@ -15,7 +15,7 @@ import java.util.Arrays;
 
 /**
  *
- * @author peyman
+ * @author Ghasem Fattahpour
  */
 public class UssdContinue extends MessageBase {
 

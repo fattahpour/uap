@@ -8,7 +8,7 @@ package com.fattahpour.uap.messages;
 
 /**
  *
- * @author peyman
+ * @author Ghasem Fattahpour
  */
 public class UssdShake extends MessageBase {
 

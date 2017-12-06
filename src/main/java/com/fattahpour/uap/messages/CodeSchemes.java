@@ -7,7 +7,7 @@ package com.fattahpour.uap.messages;
 
 /**
  *
- * @author peyman
+ * @author Ghasem Fattahpour
  */
 public enum CodeSchemes {
     sevenDigit(0x0F), sixteenDigit(0x48), eightDigit(0x44), NONE(0);

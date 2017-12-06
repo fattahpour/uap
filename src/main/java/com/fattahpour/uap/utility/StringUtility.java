@@ -14,7 +14,7 @@ import java.util.List;
 
 /**
  *
- * @author peyman
+ * @author Ghasem Fattahpour
  */
 public class StringUtility {
 

@@ -9,7 +9,7 @@ import org.junit.Test;
 
 /**
  *
- * @author peyman
+ * @author Ghasem Fattahpour
  */
 public class TestMessages {
     
@@ -17,6 +17,12 @@ public class TestMessages {
     @Test
     public void UssdBegin()
     {
-    
+         UssdBind bind = new UssdBind();
+         bind.encode();
+         
+         
+         
+         
+         
     }
 }

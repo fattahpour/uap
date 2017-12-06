@@ -7,7 +7,7 @@ package com.fattahpour.uap.messages;
 
 /**
  *
- * @author peyman
+ * @author Ghasem Fattahpour
  */
 public enum CommandIDs {
     UssdBind(0x00000065), UssdUnBind(0x00000066), UssdBindResp(0x00000067), UssdUnBindResp(0x00000068),

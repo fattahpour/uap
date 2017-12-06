@@ -12,7 +12,7 @@ import com.fattahpour.uap.messages.CommandIDs;
 
 /**
  *
- * @author peyman
+ * @author Ghasem Fattahpour
  */
 public class UssdAbort extends MessageBase {
 

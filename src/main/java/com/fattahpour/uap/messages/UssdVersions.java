@@ -7,7 +7,7 @@ package com.fattahpour.uap.messages;
  */
 /**
  *
- * @author peyman
+ * @author Ghasem Fattahpour
  */
 public enum UssdVersions {
     PHASEI(0x10), PHASEII(0x20), PHASEIII(0x25), NONE(0);

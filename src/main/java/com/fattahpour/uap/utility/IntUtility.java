@@ -9,7 +9,7 @@ import com.google.common.primitives.Ints;
 
 /**
  *
- * @author peyman
+ * @author Ghasem Fattahpour
  */
 public class IntUtility {
 

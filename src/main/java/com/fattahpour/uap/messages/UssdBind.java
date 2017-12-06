@@ -13,7 +13,7 @@ import java.io.IOException;
 
 /**
  *
- * @author peyman
+ * @author Ghasem Fattahpour
  */
 public class UssdBind extends MessageBase {
 

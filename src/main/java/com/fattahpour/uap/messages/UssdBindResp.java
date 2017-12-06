@@ -10,7 +10,7 @@ import com.fattahpour.uap.utility.StringUtility;
 
 /**
  *
- * @author peyman
+ * @author Ghasem Fattahpour
  */
 public class UssdBindResp extends MessageBase {
 

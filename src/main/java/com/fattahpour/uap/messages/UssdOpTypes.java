@@ -7,7 +7,7 @@ package com.fattahpour.uap.messages;
 
 /**
  *
- * @author peyman
+ * @author Ghasem Fattahpour
  */
 public enum UssdOpTypes {
     Request(0x01), Notify(0x02), Response(0x03), Release(0x04), NONE(0);
