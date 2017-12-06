@@ -24,8 +24,8 @@ public abstract class MessageBase {
     protected int CommandStatus = 0;
     protected int SenderCB = 0xFFFFFFFF;
     protected int ReceiverCB = 0xFFFFFFFF;
-    protected String AccountName = "INamin";
-    protected String Password = "INamin";
+    protected String AccountName = "AccountName";
+    protected String Password = "Password";
     protected final String SystemType = "USSD";
     protected final int InterfaceVersion = 0x10;
     protected UssdVersions UssdVersion;
