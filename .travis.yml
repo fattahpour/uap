@@ -1,0 +1,11 @@
+sudo: false
+language: java
+cache:
+  directories:
+  - "$HOME/.cache"
+deploy:
+  provider: script
+  script: "mvn clean build"
+  skip_cleanup: true
+  on:
+    tags: true
