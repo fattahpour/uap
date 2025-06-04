@@ -17,13 +17,13 @@ public class UssdBegin extends MessageBase {
 
     public UssdBegin(byte[] message) {
         this.Message = message;
-        this.dencode();
+        this.decode();
         this.CommandID = CommandIDs.UssdBegin;
     }
 
     @Override
-    protected boolean dencode() {
-        super.dencode();
+    protected boolean decode() {
+        super.decode();
         this.UssdVersion = UssdVersions.fromInteger(Arrays.copyOfRange(this.Message, 20, 21)[0]);
         this.UssdOpType = UssdOpTypes.fromInteger(Arrays.copyOfRange(this.Message, 21, 22)[0]);
         this.MsIsdn = StringUtility.GetCOctetStringFromBytes(Arrays.copyOfRange(this.Message, 22, 43));

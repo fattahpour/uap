@@ -16,15 +16,15 @@ public class UssdBindResp extends MessageBase {
 
     public UssdBindResp(byte[] message) {
         this.Message = message;
-        this.dencode();
+        this.decode();
         // The response to a bind operation should carry the UssdBindResp ID.
         // Previously this was incorrectly set to UssdUnBindResp.
         this.CommandID = CommandIDs.UssdBindResp;
     }
 
     @Override
-    protected boolean dencode() {
-        super.dencode(); //To change body of generated methods, choose Tools | Templates.
+    protected boolean decode() {
+        super.decode(); //To change body of generated methods, choose Tools | Templates.
         this.AccountName = StringUtility.GetCOctetStringFromBytes(this.Message, 20, 11);
         return true;
         

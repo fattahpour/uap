@@ -26,15 +26,15 @@ public class UssdContinue extends MessageBase {
 
     public UssdContinue(byte[] message) {
         this.Message = message;
-        this.dencode();
+        this.decode();
         // After decoding we should preserve the original command type.
         // Setting this to UssdBegin prevented proper message identification.
         this.CommandID = CommandIDs.UssdContinue;
     }
 
     @Override
-    protected boolean dencode() {
-        super.dencode(); //To change body of generated methods, choose Tools | Templates.
+    protected boolean decode() {
+        super.decode(); //To change body of generated methods, choose Tools | Templates.
 
         this.UssdVersion = UssdVersions.fromInteger(Arrays.copyOfRange(this.Message, 20, 21)[0]);
         this.UssdOpType = UssdOpTypes.fromInteger(Arrays.copyOfRange(this.Message, 21, 22)[0]);

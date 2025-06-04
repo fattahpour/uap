@@ -124,7 +124,12 @@ public abstract class MessageBase {
 
     }
 
-    protected boolean dencode() {
+    /**
+     * Decode the raw message bytes and populate the object's fields.
+     *
+     * @return {@code true} if decoding succeeds, otherwise {@code false}.
+     */
+    protected boolean decode() {
         if (this.headerDecode()) {
             return true;
         } else {
