@@ -13,13 +13,13 @@ public class UssdShakeResp extends MessageBase {
 
     public UssdShakeResp(byte[] message) {
         this.Message = message;
-        this.dencode();
+        this.decode();
         this.CommandID = CommandIDs.UssdShakeResp;
     }
 
     @Override
-    protected boolean dencode() {
-        super.dencode();
+    protected boolean decode() {
+        super.decode();
         return true;
     }
 

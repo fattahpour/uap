@@ -16,8 +16,8 @@ public class UssdUnBindResp extends MessageBase {
     }
 
     @Override
-    protected boolean dencode() {
-        return super.dencode(); //To change body of generated methods, choose Tools | Templates.
+    protected boolean decode() {
+        return super.decode(); //To change body of generated methods, choose Tools | Templates.
     }
     
 
