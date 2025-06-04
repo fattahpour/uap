@@ -19,7 +19,6 @@ public class UssdEnd extends MessageBase {
     public UssdEnd() {
         this.CommandID = CommandIDs.UssdEnd;
         this.UssdOpType = UssdOpTypes.Response;
-        //ussdContinue.setUssdOpType(UssdOpTypes.Response);
     }
 
     public UssdVersions getUssdVersion() {
