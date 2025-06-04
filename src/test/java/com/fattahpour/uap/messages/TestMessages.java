@@ -15,14 +15,11 @@ public class TestMessages {
     
     
     @Test
-    public void UssdBegin()
-    {
-         UssdBind bind = new UssdBind();
-         bind.encode();
-         
-         
-         
-         
-         
+    public void validateCommandIds() {
+        UssdBindResp bindResp = new UssdBindResp(new byte[20]);
+        assert(bindResp.getCommandID() == CommandIDs.UssdBindResp);
+
+        UssdChargeIndResp chargeResp = new UssdChargeIndResp();
+        assert(chargeResp.getCommandID() == CommandIDs.UssdChargeIndResp);
     }
 }

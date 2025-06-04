@@ -17,7 +17,9 @@ public class UssdBindResp extends MessageBase {
     public UssdBindResp(byte[] message) {
         this.Message = message;
         this.dencode();
-        this.CommandID = CommandIDs.UssdUnBindResp;
+        // The response to a bind operation should carry the UssdBindResp ID.
+        // Previously this was incorrectly set to UssdUnBindResp.
+        this.CommandID = CommandIDs.UssdBindResp;
     }
 
     @Override

@@ -27,7 +27,9 @@ public class UssdContinue extends MessageBase {
     public UssdContinue(byte[] message) {
         this.Message = message;
         this.dencode();
-        this.CommandID = CommandIDs.UssdBegin;
+        // After decoding we should preserve the original command type.
+        // Setting this to UssdBegin prevented proper message identification.
+        this.CommandID = CommandIDs.UssdContinue;
     }
 
     @Override
@@ -37,7 +39,11 @@ public class UssdContinue extends MessageBase {
         this.UssdVersion = UssdVersions.fromInteger(Arrays.copyOfRange(this.Message, 20, 21)[0]);
         this.UssdOpType = UssdOpTypes.fromInteger(Arrays.copyOfRange(this.Message, 21, 22)[0]);
         this.MsIsdn = StringUtility.GetCOctetStringFromBytes(Arrays.copyOfRange(this.Message, 22, 43));
-        this.ServiceCode = 987;
+        // Parse the service code from the incoming bytes instead of using a
+        // hard coded value.
+        this.ServiceCode = Integer.parseInt(
+                StringUtility.GetCOctetStringFromBytes(
+                        Arrays.copyOfRange(this.Message, 43, 47)));
         this.CodeScheme = CodeSchemes.fromInteger(Arrays.copyOfRange(this.Message, 47, 48)[0]);
         this.UssdString = StringUtility.GetCOctetStringFromBytes(Arrays.copyOfRange(this.Message, 48, this.CommandLength));
 

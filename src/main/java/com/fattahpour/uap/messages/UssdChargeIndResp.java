@@ -12,7 +12,9 @@ package com.fattahpour.uap.messages;
 public class UssdChargeIndResp extends MessageBase {
 
     public UssdChargeIndResp() {
-    this.CommandID = CommandIDs.UssdBindResp;
+        // Charge indication responses should use the UssdChargeIndResp ID.
+        // It was previously set to UssdBindResp, which was incorrect.
+        this.CommandID = CommandIDs.UssdChargeIndResp;
     }
     
 }
