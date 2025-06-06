@@ -1,18 +1,11 @@
 package com.fattahpour.uap.messages;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 import com.fattahpour.uap.utility.StringUtility;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 /**
- *
- * @author Ghasem Fattahpour
+ * Represents a USSD End message which terminates an interactive USSD session.
  */
 public class UssdEnd extends MessageBase {
 
