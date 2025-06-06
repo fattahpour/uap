@@ -8,6 +8,7 @@ package com.fattahpour.uap.messages;
 import org.junit.Test;
 import java.util.Arrays;
 import com.fattahpour.uap.utility.IntUtility;
+import static org.junit.Assert.*;
 
 /**
  *
@@ -19,10 +20,10 @@ public class TestMessages {
     @Test
     public void validateCommandIds() {
         UssdBindResp bindResp = new UssdBindResp(new byte[20]);
-        assert(bindResp.getCommandID() == CommandIDs.UssdBindResp);
+        assertEquals(CommandIDs.UssdBindResp, bindResp.getCommandID());
 
         UssdChargeIndResp chargeResp = new UssdChargeIndResp();
-        assert(chargeResp.getCommandID() == CommandIDs.UssdChargeIndResp);
+        assertEquals(CommandIDs.UssdChargeIndResp, chargeResp.getCommandID());
     }
 
     @Test
@@ -30,11 +31,21 @@ public class TestMessages {
         UssdBind bind = new UssdBind();
         byte[] encoded = bind.encode();
 
-        assert(encoded != null);
+        assertNotNull("Encoded bind message should not be null", encoded);
         int length = IntUtility.toInt(Arrays.copyOfRange(encoded, 0, 4));
-        assert(length == encoded.length);
+        assertEquals("Message length field", encoded.length, length);
 
         int command = IntUtility.toInt(Arrays.copyOfRange(encoded, 4, 8));
-        assert(command == CommandIDs.UssdBind.toInt());
+        assertEquals(CommandIDs.UssdBind.toInt(), command);
+
+        // Decode header back using a simple MessageBase subclass
+        DummyMessage decoded = new DummyMessage(encoded);
+        assertTrue(decoded.decode());
+        assertEquals(CommandIDs.UssdBind, decoded.getCommandID());
+    }
+
+    private static class DummyMessage extends MessageBase {
+        DummyMessage(byte[] message) { this.Message = message; }
+        public boolean decode() { return super.decode(); }
     }
 }
